@@ -252,7 +252,6 @@ function convertirNombre() {
   }
 
   afficherEtapes([
-    `Conversion simple : on donne directement le résultat.`,
     ...lectureSource.etapes,
     `Puis on écrit ${lectureSource.valeurDecimale} dans la base ${baseArrivee} par divisions successives.`
   ]);
