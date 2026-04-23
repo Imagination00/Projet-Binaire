@@ -1,0 +1,241 @@
+:root {
+  --bg: #f6f1e8;
+  --card: #fffdf8;
+  --text: #1f2933;
+  --accent: #c2410c;
+  --border: rgba(194, 65, 12, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  background: linear-gradient(160deg, #f6f1e8 0%, #efe5d4 100%);
+  min-height: 100vh;
+}
+
+.container {
+  width: min(900px, calc(100% - 32px));
+  margin: 28px auto 40px;
+}
+
+h1 {
+  margin: 0 0 14px;
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  color: #1a2a33;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.intro-note {
+  margin: 0 0 18px;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+input,
+select,
+button {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(95, 107, 122, 0.25);
+  font-size: 1rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 14px 0;
+}
+
+button {
+  margin-top: 8px;
+  border: 0;
+  cursor: pointer;
+  font-weight: 800;
+  color: white;
+  background: var(--accent);
+}
+
+.feedback {
+  min-height: 24px;
+  margin: 12px 0 0;
+  color: #b42318;
+  font-weight: 700;
+}
+
+.result-box,
+.steps-box {
+  margin-top: 16px;
+  padding: 14px;
+  background: #fff;
+  border: 1px solid rgba(95, 107, 122, 0.18);
+  border-radius: 12px;
+}
+
+.division-box {
+  margin-top: 16px;
+  padding: 14px;
+  background: #fff;
+  border: 1px solid rgba(95, 107, 122, 0.18);
+  border-radius: 12px;
+}
+
+.tree-help {
+  margin: 0 0 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(194, 65, 12, 0.2);
+  color: #7c2d12;
+  line-height: 1.5;
+}
+
+.division-details {
+  margin-top: 10px;
+  font-family: "Consolas", "Courier New", monospace;
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+.tree-meta {
+  margin-bottom: 14px;
+  font-weight: 800;
+  color: var(--accent);
+  font-size: 1.02rem;
+}
+
+.tree-layout {
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) 120px;
+  gap: 16px;
+  align-items: start;
+}
+
+.tree-left {
+  position: relative;
+  padding-right: 14px;
+}
+
+.tree-left::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(194, 65, 12, 0.12), rgba(245, 158, 11, 0.95), rgba(194, 65, 12, 0.12));
+}
+
+.tree-row {
+  display: grid;
+  grid-template-columns: 1fr auto 70px;
+  gap: 10px;
+  align-items: center;
+  min-height: 48px;
+  padding: 6px 0;
+}
+
+.tree-row + .tree-row {
+  border-top: 1px solid rgba(245, 158, 11, 0.16);
+}
+
+.tree-current,
+.tree-divider,
+.tree-quotient,
+.tree-remainder,
+.tree-footer {
+  font-variant-numeric: tabular-nums;
+}
+
+.tree-current,
+.tree-quotient {
+  text-align: right;
+  font-weight: 800;
+  color: #13212b;
+}
+
+.tree-divider {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.tree-right {
+  display: grid;
+  gap: 10px;
+  padding-left: 2px;
+}
+
+.tree-label {
+  text-align: center;
+  font-weight: 800;
+  color: var(--accent);
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(245, 158, 11, 0.24);
+}
+
+.tree-remainder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: 10px;
+  background: #fff;
+  color: #7c2d12;
+  font-weight: 800;
+}
+
+.tree-footer {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(245, 158, 11, 0.35);
+  color: #7c2d12;
+}
+
+.steps-box ol {
+  margin: 8px 0 0;
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
+#result {
+  margin: 8px 0 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  word-break: break-all;
+}
+
+@media (max-width: 720px) {
+  .row,
+  .tree-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .tree-left {
+    padding-right: 0;
+  }
+
+  .tree-left::after {
+    display: none;
+  }
+}
