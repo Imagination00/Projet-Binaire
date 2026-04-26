@@ -4,8 +4,12 @@ Ce dossier est maintenant en architecture plate: un seul fichier `index.html`.
 
 ## Lancer
 
-1. Ouvrir `index.html` dans un navigateur (connexion internet requise pour charger Brython via CDN).
-2. Utiliser le convertisseur directement, sans serveur Python.
+1. Tapez la commande `python -m http.serveur` dans un terminal.
+2. Cliquez sur le lien fourni.
+3. Le navigateur vous affiche votre système de fichiers. Naviguez jusqu'au dossier contenant le fichier html correspondant.
+4. Vous pouvez maintenant utiliser l'outil.
+
+L'outil ne fonctionnera pas si vous ouvrez le fichier html directement dans votre navigateur.
 
 ## Fonctionnalites
 
